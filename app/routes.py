@@ -41,22 +41,15 @@ def close_connection(exception):
 def index():
     return "Hello, world!"
 
-# this is returned as a JSON.
+# this is returned as a python dictionary
 @app.route("/aboutme")
 def aboutme():
-    return '''
-    <html>
-       <head>
-         <title>About Me</title>
-       </head>
-        <body>
-        <h1>About The Developer</h1>
-        <p>First_name: Katelynn</p>
-        <p>Last-Name: Heasley</p>
-        <p>Hobby: Exercising, Music, & Learning to Code!</p>
-        </body>
-    </html>
-    '''
+    user ={
+        "first_name" : "Katelynn",
+        "last_name" : "Heasley",
+        "Hobbies": "Music, exercising, learning to code"
+    }
+    return user
 
 @app.route("/users")
 def dump_json():
